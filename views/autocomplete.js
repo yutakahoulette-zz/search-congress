@@ -55,24 +55,23 @@ const menu = obj => {
   return h('div.sh-1.absolute.left-0.bg-white.z-1', {
     style: {'max-height': `${16 * 20}px`, 'overflow-y': 'auto'},
     hook: {insert: positionMenu}
-  }
-  , obj.results$().map((r, i) =>
-    h('div.p-1.sub.hover-bg-grey-light.cursor-pointer', {
-      on: {click: handleClick(obj, i)},
-      class: {'bg-grey-light': i === index}
-    }, r))
+  },
+    obj.results$().map((r, i) =>
+      h('div.p-1.hover-bg-grey.cursor-pointer', {
+        on: {click: handleClick(obj, i)},
+        class: {'bg-grey': i === index}
+      }, r))
   )
 }
 
-
 // Params:
 // obj {
-//   name: String (name of input)
-// , keyup: Function (should call a search function based on input value)
-// , debounce: Boolean (use for limiting ajax calls)
-// , results$: Stream containing an array
-// , field: Function (validated form field to wrap input)
-// , selected$: Stream
+//  name: String (name of input - can be used to serialize form etc...),
+//  placeholder: String (input placeholder),
+//  debounce: Boolean (use for limiting ajax calls),
+//  results$: Stream
+//  selectionIndex$: Stream
+//  selected$: Stream
 // }
 module.exports = (obj) => {
   return h('div.relative', [
@@ -80,7 +79,7 @@ module.exports = (obj) => {
       props: {
         type: 'text',
         name: obj.name || '',
-        value: obj.value || obj.selected$() || '',
+        value: obj.selected$() || '',
         placeholder: obj.placeholder
       },
       on: {

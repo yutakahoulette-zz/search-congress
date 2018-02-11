@@ -4,9 +4,9 @@ const R = require('ramda')
 const row = (label, data, prefix = '') =>
   h('tr', [h('td.bold', label), h('td', (data && (prefix + data)) || '')])
 
-const congressTable = (member = {name: ''}) => {
-  const fade = !(member.name) || !(member.name.trim())
-  return h('table.width-full', {class: {'opacity-05': fade}}, [
+const congressTable = (member) => {
+  const fade = !(member.name)
+  return h('table', {class: {'opacity-05': fade}}, [
     row('Name', member.name),
     row('State', member.state),
     row('Type', member.type),

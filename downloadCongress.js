@@ -4,8 +4,7 @@ const R = require('ramda')
 const fs = require('fs')
 
 const url = (path) =>
-  'https://raw.githubusercontent.com/unitedstates/congress-legislators/master/' +
-  path + '.yaml'
+  `https://raw.githubusercontent.com/unitedstates/congress-legislators/master/${path}.yaml`
 
 const log = (verb, noun) => console.log(verb + ' ' + noun)
 
