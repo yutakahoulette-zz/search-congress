@@ -93,11 +93,11 @@ const processData = (file1) => (err, file2) => {
   remove([file1, file2])
 
   write([
-    {path: 'src/json/congressData.json', data: mergedData},
-    {path: 'src/json/congressNames.json', data: R.keys(dictionary)},
-    {path: 'src/json/congressDictionary.json', data: dictionary},
-    {path: 'src/json/senatorsByState.json', data: senatorsByState},
-    {path: 'src/json/repsByStateAndDistrict.json', data: repsByStateAndDistrict}
+    {path: 'json/congressData.json', data: mergedData},
+    {path: 'json/congressNames.json', data: R.keys(dictionary)},
+    {path: 'json/congressDictionary.json', data: dictionary},
+    {path: 'json/senatorsByState.json', data: senatorsByState},
+    {path: 'json/repsByStateAndDistrict.json', data: repsByStateAndDistrict}
   ])
 }
 
