@@ -1,19 +1,17 @@
 {
-  "name": "y",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
   "scripts": {
+    "start": "budo index.js --live --open -- -t babelify",
     "download": "node downloadCongress.js"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
+    "flimflam": "^0.8.0",
     "flyd": "^0.2.6",
     "ramda": "^0.25.0",
-    "snabbdom": "^0.7.1"
+    "snabbdom": "^0.7.1",
+    "throttle-debounce": "^1.0.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^8.0.0",
     "budo": "^11.1.0",
