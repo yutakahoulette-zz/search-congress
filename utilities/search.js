@@ -1,8 +1,7 @@
 const clean = st => st.replace(/\W/g, '')
 
-// Curried function that first takes an array to search in
-// and then takes a search string.
-// Returns and arry of matches.
+// Curried function that first takes an array to search in and then takes a search string.
+// Returns an array of matches.
 // Example:
 //   const fruitSearch = search(['apple', 'apricot', 'banana', 'pear'])
 //   fruitSearch('pea') // returns ['pear']
